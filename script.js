@@ -77,7 +77,6 @@ function generateBomb(numSquare) {
     }
   }
 }
-console.log(bombs)
 // FUNZIONE CHE GENERA LA GRIGLIA
 function generaGriglia(numSquare, squareperSide) {
   console.log("numero di celle totali: ", numSquare);
@@ -108,7 +107,7 @@ function generaCella(numSquare, squareperSide) {
 function coloraCella() {
   // console.log(this.innerText);
   let num = parseInt(this.innerText);
-  console.log(attempts, max_attempt);
+  // console.log(attempts, max_attempt);
   attempts++;
 
 // CASO IN CUI L'UTENTE VINCE
@@ -143,7 +142,7 @@ function gameOver() {
     rimuoviEvento.removeEventListener("click", coloraCella);
     for (let n = 0; n < bombs.length; n++) {
       if (bombs[n] == rimuoviEvento.innerText) {
-        console.log(bombs[n], rimuoviEvento.innerText);
+        // console.log(bombs[n], rimuoviEvento.innerText);
         rimuoviEvento.style.backgroundColor = "red";
         rimuoviEvento.innerHTML = `<img src="img/bomb.png">`;
       }
