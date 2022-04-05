@@ -77,7 +77,7 @@ function generateBomb(numSquare) {
     }
   }
 }
-
+console.log(bombs)
 // FUNZIONE CHE GENERA LA GRIGLIA
 function generaGriglia(numSquare, squareperSide) {
   console.log("numero di celle totali: ", numSquare);
@@ -108,9 +108,18 @@ function generaCella(numSquare, squareperSide) {
 function coloraCella() {
   // console.log(this.innerText);
   let num = parseInt(this.innerText);
+  console.log(attempts, max_attempt);
   attempts++;
 
-  if (bombs.includes(num)) {
+// CASO IN CUI L'UTENTE VINCE
+  if(attempts == max_attempt){
+    alert("Complimenti, hai vinto! Non hai clickato su nessuna bomba!");
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
+  }
+  
+if (bombs.includes(num)) {
     this.style.backgroundColor = "red";
     this.innerHTML = `<img src="img/bomb.png">`;
     gameOver();
@@ -118,17 +127,15 @@ function coloraCella() {
     this.style.backgroundColor = "#6495ed";
     this.style.color = "white";
   }
+
   this.classList.remove("pointer");
   this.removeEventListener("click", coloraCella);
 }
+
 // FUNZIONE CHE GESTISCE LA FINE DEL GIOCO
 function gameOver() {
-  if (attempts == max_attempt) {
-    alert("Complimenti, hai vinto! Non hai clickato su nessuna bomba!");
-  } else {
     alert("Hai totalizzato un punteggio di : " + parseInt(attempts - 1));
-  }
-  let caselleRestanti = document.getElementsByClassName("box");
+    let caselleRestanti = document.getElementsByClassName("box");
 
   for (let i = 0; i < caselleRestanti.length; i++) {
     let rimuoviEvento = caselleRestanti[i];
