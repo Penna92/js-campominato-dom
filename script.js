@@ -142,6 +142,9 @@ function gameOver() {
       }
     }
   }
+  setTimeout(() => {
+    location.reload();
+  }, 2000);
 }
 //document.getElementById("level").addEventListener("change", setLevel);
 document.getElementById("play").addEventListener("click", setLevel);
