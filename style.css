@@ -1,0 +1,46 @@
+header {
+    height: 80px;
+}
+
+header img {
+    height: 60px;
+}
+
+main {
+    height: calc(100vh - 140px);
+    min-height: 500px;
+    background-color: aquamarine;
+    overflow-y: auto;
+}
+
+header h1 {
+    margin-left: 20px;
+}
+
+footer {
+    height: 60px;
+}
+
+footer a {
+    padding-left: 10px;
+}
+
+.gridrow {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    /*width: calc(100% / 10);
+    height: calc(100% / 10);*/
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
