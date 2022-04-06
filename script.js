@@ -70,12 +70,14 @@ function setLevel(event) {
 //FUNZIONE CHE GENERA LE BOMBE
 function generateBomb(numSquare) {
   max_attempt = numSquare - BOMB_NUMBER;
+  bombs.length = 0; // serve per riazzerare l'array delle bombe ad ogni scelta del livello
   while (bombs.length < BOMB_NUMBER) {
     let bombNUmber = getRandomInt(1, numSquare);
     if (!bombs.includes(bombNUmber)) {
       bombs.push(bombNUmber);
     }
   }
+  console.log(bombs);
 }
 // FUNZIONE CHE GENERA LA GRIGLIA
 function generaGriglia(numSquare, squareperSide) {
